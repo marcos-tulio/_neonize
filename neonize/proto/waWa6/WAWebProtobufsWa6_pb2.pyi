@@ -470,6 +470,7 @@ class ClientPayload(_message.Message):
             VR: ClientPayload.UserAgent._DeviceType.ValueType  # 4
             SMART_DISPLAY: ClientPayload.UserAgent._DeviceType.ValueType  # 5
             SMART_SPEAKER: ClientPayload.UserAgent._DeviceType.ValueType  # 6
+            AGENT: ClientPayload.UserAgent._DeviceType.ValueType  # 7
 
         class DeviceType(_DeviceType, metaclass=_DeviceTypeEnumTypeWrapper): ...
         PHONE: ClientPayload.UserAgent.DeviceType.ValueType  # 0
@@ -479,6 +480,7 @@ class ClientPayload(_message.Message):
         VR: ClientPayload.UserAgent.DeviceType.ValueType  # 4
         SMART_DISPLAY: ClientPayload.UserAgent.DeviceType.ValueType  # 5
         SMART_SPEAKER: ClientPayload.UserAgent.DeviceType.ValueType  # 6
+        AGENT: ClientPayload.UserAgent.DeviceType.ValueType  # 7
 
         class _DistributionChannel:
             ValueType = _typing.NewType("ValueType", _builtins.int)
@@ -699,6 +701,26 @@ class ClientPayload(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class IntegrationAttestation(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        STATICUNBOUND_FIELD_NUMBER: _builtins.int
+        ONLINESIGNED_FIELD_NUMBER: _builtins.int
+        staticUnbound: _builtins.str
+        onlineSigned: _builtins.str
+        def __init__(
+            self,
+            *,
+            staticUnbound: _builtins.str | None = ...,
+            onlineSigned: _builtins.str | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["onlineSigned", b"onlineSigned", "staticUnbound", b"staticUnbound"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["onlineSigned", b"onlineSigned", "staticUnbound", b"staticUnbound"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class InteropData(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -796,6 +818,7 @@ class ClientPayload(_message.Message):
     PAIREDPERIPHERALS_FIELD_NUMBER: _builtins.int
     TESTISOLATIONID_FIELD_NUMBER: _builtins.int
     MESSAGESTS_FIELD_NUMBER: _builtins.int
+    INTEGRATIONATTESTATION_FIELD_NUMBER: _builtins.int
     username: _builtins.int
     passive: _builtins.bool
     pushName: _builtins.str
@@ -840,6 +863,8 @@ class ClientPayload(_message.Message):
     def interopData(self) -> Global___ClientPayload.InteropData: ...
     @_builtins.property
     def pairedPeripherals(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
+    @_builtins.property
+    def integrationAttestation(self) -> Global___ClientPayload.IntegrationAttestation: ...
     def __init__(
         self,
         *,
@@ -880,10 +905,11 @@ class ClientPayload(_message.Message):
         pairedPeripherals: _abc.Iterable[_builtins.str] | None = ...,
         testIsolationID: _builtins.bytes | None = ...,
         messageSts: _builtins.int | None = ...,
+        integrationAttestation: Global___ClientPayload.IntegrationAttestation | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["accountType", b"accountType", "connectAttemptCount", b"connectAttemptCount", "connectReason", b"connectReason", "connectType", b"connectType", "connectionSequenceInfo", b"connectionSequenceInfo", "device", b"device", "devicePairingData", b"devicePairingData", "dnsSource", b"dnsSource", "fbAppID", b"fbAppID", "fbCat", b"fbCat", "fbDeviceID", b"fbDeviceID", "fbUserAgent", b"fbUserAgent", "interopData", b"interopData", "iosAppExtension", b"iosAppExtension", "lc", b"lc", "lidDbMigrated", b"lidDbMigrated", "memClass", b"memClass", "messageSts", b"messageSts", "oc", b"oc", "paaLink", b"paaLink", "paddingBytes", b"paddingBytes", "passive", b"passive", "preacksCount", b"preacksCount", "processingQueueSize", b"processingQueueSize", "product", b"product", "pull", b"pull", "pushName", b"pushName", "sessionID", b"sessionID", "shortConnect", b"shortConnect", "testIsolationID", b"testIsolationID", "trafficAnonymization", b"trafficAnonymization", "userAgent", b"userAgent", "username", b"username", "webInfo", b"webInfo", "yearClass", b"yearClass"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["accountType", b"accountType", "connectAttemptCount", b"connectAttemptCount", "connectReason", b"connectReason", "connectType", b"connectType", "connectionSequenceInfo", b"connectionSequenceInfo", "device", b"device", "devicePairingData", b"devicePairingData", "dnsSource", b"dnsSource", "fbAppID", b"fbAppID", "fbCat", b"fbCat", "fbDeviceID", b"fbDeviceID", "fbUserAgent", b"fbUserAgent", "integrationAttestation", b"integrationAttestation", "interopData", b"interopData", "iosAppExtension", b"iosAppExtension", "lc", b"lc", "lidDbMigrated", b"lidDbMigrated", "memClass", b"memClass", "messageSts", b"messageSts", "oc", b"oc", "paaLink", b"paaLink", "paddingBytes", b"paddingBytes", "passive", b"passive", "preacksCount", b"preacksCount", "processingQueueSize", b"processingQueueSize", "product", b"product", "pull", b"pull", "pushName", b"pushName", "sessionID", b"sessionID", "shortConnect", b"shortConnect", "testIsolationID", b"testIsolationID", "trafficAnonymization", b"trafficAnonymization", "userAgent", b"userAgent", "username", b"username", "webInfo", b"webInfo", "yearClass", b"yearClass"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["accountType", b"accountType", "connectAttemptCount", b"connectAttemptCount", "connectReason", b"connectReason", "connectType", b"connectType", "connectionSequenceInfo", b"connectionSequenceInfo", "device", b"device", "devicePairingData", b"devicePairingData", "dnsSource", b"dnsSource", "fbAppID", b"fbAppID", "fbCat", b"fbCat", "fbDeviceID", b"fbDeviceID", "fbUserAgent", b"fbUserAgent", "interopData", b"interopData", "iosAppExtension", b"iosAppExtension", "lc", b"lc", "lidDbMigrated", b"lidDbMigrated", "memClass", b"memClass", "messageSts", b"messageSts", "oc", b"oc", "paaLink", b"paaLink", "paddingBytes", b"paddingBytes", "pairedPeripherals", b"pairedPeripherals", "passive", b"passive", "preacksCount", b"preacksCount", "processingQueueSize", b"processingQueueSize", "product", b"product", "pull", b"pull", "pushName", b"pushName", "sessionID", b"sessionID", "shards", b"shards", "shortConnect", b"shortConnect", "testIsolationID", b"testIsolationID", "trafficAnonymization", b"trafficAnonymization", "userAgent", b"userAgent", "username", b"username", "webInfo", b"webInfo", "yearClass", b"yearClass"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["accountType", b"accountType", "connectAttemptCount", b"connectAttemptCount", "connectReason", b"connectReason", "connectType", b"connectType", "connectionSequenceInfo", b"connectionSequenceInfo", "device", b"device", "devicePairingData", b"devicePairingData", "dnsSource", b"dnsSource", "fbAppID", b"fbAppID", "fbCat", b"fbCat", "fbDeviceID", b"fbDeviceID", "fbUserAgent", b"fbUserAgent", "integrationAttestation", b"integrationAttestation", "interopData", b"interopData", "iosAppExtension", b"iosAppExtension", "lc", b"lc", "lidDbMigrated", b"lidDbMigrated", "memClass", b"memClass", "messageSts", b"messageSts", "oc", b"oc", "paaLink", b"paaLink", "paddingBytes", b"paddingBytes", "pairedPeripherals", b"pairedPeripherals", "passive", b"passive", "preacksCount", b"preacksCount", "processingQueueSize", b"processingQueueSize", "product", b"product", "pull", b"pull", "pushName", b"pushName", "sessionID", b"sessionID", "shards", b"shards", "shortConnect", b"shortConnect", "testIsolationID", b"testIsolationID", "trafficAnonymization", b"trafficAnonymization", "userAgent", b"userAgent", "username", b"username", "webInfo", b"webInfo", "yearClass", b"yearClass"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     def WhichOneof(self, oneof_group: _Never) -> None: ...
 
