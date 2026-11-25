@@ -13,7 +13,8 @@ on:
     - cron: "0 0 * * 1" # every Monday 00:00 UTC
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
   golang-deps:
