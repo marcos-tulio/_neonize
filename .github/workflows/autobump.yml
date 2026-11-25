@@ -15,7 +15,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  
 
 jobs:
   golang-deps:
@@ -104,8 +103,3 @@ jobs:
             goneonize
             automated pr
           assignees: krypton-byte
-
-permissions:
-  contents: write
-  pull-requests: write
-  
