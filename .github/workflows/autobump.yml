@@ -26,6 +26,8 @@ jobs:
           go-version-file: goneonize/go.mod
           cache-dependency-path: goneonize/go.sum
       - name: Update Go dependencies
+        env:
+          GOPROXY: direct
         run: |
           cd goneonize
           go get -u ./...
