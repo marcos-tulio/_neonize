@@ -117,6 +117,23 @@ class DeviceCapabilities(_message.Message):
         def WhichOneof(self, oneof_group: _Never) -> None: ...
 
     @_typing.final
+    class PhoneNumberSharing(_message.Message):
+        DESCRIPTOR: _descriptor.Descriptor
+
+        PHONESHARINGSUPPORTED_FIELD_NUMBER: _builtins.int
+        phoneSharingSupported: _builtins.bool
+        def __init__(
+            self,
+            *,
+            phoneSharingSupported: _builtins.bool | None = ...,
+        ) -> None: ...
+        _HasFieldArgType: _TypeAlias = _typing.Literal["phoneSharingSupported", b"phoneSharingSupported"]  # noqa: Y015
+        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
+        _ClearFieldArgType: _TypeAlias = _typing.Literal["phoneSharingSupported", b"phoneSharingSupported"]  # noqa: Y015
+        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
+        def WhichOneof(self, oneof_group: _Never) -> None: ...
+
+    @_typing.final
     class BizAiWebOnboarding(_message.Message):
         DESCRIPTOR: _descriptor.Descriptor
 
@@ -307,6 +324,7 @@ class DeviceCapabilities(_message.Message):
     NEWSLETTERCHATSMIGRATION_FIELD_NUMBER: _builtins.int
     HOSTWRITEMUTATIONSUPPORT_FIELD_NUMBER: _builtins.int
     BIZAIWEBONBOARDING_FIELD_NUMBER: _builtins.int
+    PHONENUMBERSHARING_FIELD_NUMBER: _builtins.int
     chatLockSupportLevel: Global___DeviceCapabilities.ChatLockSupportLevel.ValueType
     memberNameTagPrimarySupport: Global___DeviceCapabilities.MemberNameTagPrimarySupport.ValueType
     @_builtins.property
@@ -331,6 +349,8 @@ class DeviceCapabilities(_message.Message):
     def hostWriteMutationSupport(self) -> Global___DeviceCapabilities.HostWriteMutationSupport: ...
     @_builtins.property
     def bizAiWebOnboarding(self) -> Global___DeviceCapabilities.BizAiWebOnboarding: ...
+    @_builtins.property
+    def phoneNumberSharing(self) -> Global___DeviceCapabilities.PhoneNumberSharing: ...
     def __init__(
         self,
         *,
@@ -347,10 +367,11 @@ class DeviceCapabilities(_message.Message):
         newsletterChatsMigration: Global___DeviceCapabilities.NewsletterChatsMigration | None = ...,
         hostWriteMutationSupport: Global___DeviceCapabilities.HostWriteMutationSupport | None = ...,
         bizAiWebOnboarding: Global___DeviceCapabilities.BizAiWebOnboarding | None = ...,
+        phoneNumberSharing: Global___DeviceCapabilities.PhoneNumberSharing | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["aiFbidMigration", b"aiFbidMigration", "aiThread", b"aiThread", "bizAiSettingsSync", b"bizAiSettingsSync", "bizAiWebOnboarding", b"bizAiWebOnboarding", "businessBroadcast", b"businessBroadcast", "chatLockSupportLevel", b"chatLockSupportLevel", "contactRefresh", b"contactRefresh", "hostWriteMutationSupport", b"hostWriteMutationSupport", "lidMigration", b"lidMigration", "memberNameTagPrimarySupport", b"memberNameTagPrimarySupport", "newsletterChatsMigration", b"newsletterChatsMigration", "reverseHistorySync", b"reverseHistorySync", "userHasAvatar", b"userHasAvatar"]  # noqa: Y015
+    _HasFieldArgType: _TypeAlias = _typing.Literal["aiFbidMigration", b"aiFbidMigration", "aiThread", b"aiThread", "bizAiSettingsSync", b"bizAiSettingsSync", "bizAiWebOnboarding", b"bizAiWebOnboarding", "businessBroadcast", b"businessBroadcast", "chatLockSupportLevel", b"chatLockSupportLevel", "contactRefresh", b"contactRefresh", "hostWriteMutationSupport", b"hostWriteMutationSupport", "lidMigration", b"lidMigration", "memberNameTagPrimarySupport", b"memberNameTagPrimarySupport", "newsletterChatsMigration", b"newsletterChatsMigration", "phoneNumberSharing", b"phoneNumberSharing", "reverseHistorySync", b"reverseHistorySync", "userHasAvatar", b"userHasAvatar"]  # noqa: Y015
     def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["aiFbidMigration", b"aiFbidMigration", "aiThread", b"aiThread", "bizAiSettingsSync", b"bizAiSettingsSync", "bizAiWebOnboarding", b"bizAiWebOnboarding", "businessBroadcast", b"businessBroadcast", "chatLockSupportLevel", b"chatLockSupportLevel", "contactRefresh", b"contactRefresh", "hostWriteMutationSupport", b"hostWriteMutationSupport", "lidMigration", b"lidMigration", "memberNameTagPrimarySupport", b"memberNameTagPrimarySupport", "newsletterChatsMigration", b"newsletterChatsMigration", "reverseHistorySync", b"reverseHistorySync", "userHasAvatar", b"userHasAvatar"]  # noqa: Y015
+    _ClearFieldArgType: _TypeAlias = _typing.Literal["aiFbidMigration", b"aiFbidMigration", "aiThread", b"aiThread", "bizAiSettingsSync", b"bizAiSettingsSync", "bizAiWebOnboarding", b"bizAiWebOnboarding", "businessBroadcast", b"businessBroadcast", "chatLockSupportLevel", b"chatLockSupportLevel", "contactRefresh", b"contactRefresh", "hostWriteMutationSupport", b"hostWriteMutationSupport", "lidMigration", b"lidMigration", "memberNameTagPrimarySupport", b"memberNameTagPrimarySupport", "newsletterChatsMigration", b"newsletterChatsMigration", "phoneNumberSharing", b"phoneNumberSharing", "reverseHistorySync", b"reverseHistorySync", "userHasAvatar", b"userHasAvatar"]  # noqa: Y015
     def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
     def WhichOneof(self, oneof_group: _Never) -> None: ...
 

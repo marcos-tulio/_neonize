@@ -77,6 +77,7 @@ class _BotMetricsEntryPointEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[_
     CONTACTS_TAB: _BotMetricsEntryPoint.ValueType  # 57
     NEW_3P_AGENT_CREATION: _BotMetricsEntryPoint.ValueType  # 58
     SHARE: _BotMetricsEntryPoint.ValueType  # 59
+    BIRTHDAY_BANNER: _BotMetricsEntryPoint.ValueType  # 60
 
 class BotMetricsEntryPoint(_BotMetricsEntryPoint, metaclass=_BotMetricsEntryPointEnumTypeWrapper): ...
 
@@ -131,6 +132,7 @@ NEW_CHAT_LIST: BotMetricsEntryPoint.ValueType  # 56
 CONTACTS_TAB: BotMetricsEntryPoint.ValueType  # 57
 NEW_3P_AGENT_CREATION: BotMetricsEntryPoint.ValueType  # 58
 SHARE: BotMetricsEntryPoint.ValueType  # 59
+BIRTHDAY_BANNER: BotMetricsEntryPoint.ValueType  # 60
 Global___BotMetricsEntryPoint: _TypeAlias = BotMetricsEntryPoint  # noqa: Y015
 
 class _BotMetricsThreadEntryPoint:
@@ -898,6 +900,11 @@ class BotCapabilityMetadata(_message.Message):
         AI_STUDY_QUIZ_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 82
         HATCH_CVM_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 83
         RICH_RESPONSE_SOCIAL_ENTITY_PREFETCH_SCHEDULER_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 84
+        AI_MUSE_JARVIS_EXTENDED_CARDS_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 85
+        AI_INTERJECTIONS_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 86
+        AI_RICH_RESPONSE_READ_ALOUD_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 87
+        AI_RICH_RESPONSE_ITEM_LISTS_ENABLED: BotCapabilityMetadata._BotCapabilityType.ValueType  # 88
+        RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH: BotCapabilityMetadata._BotCapabilityType.ValueType  # 89
 
     class BotCapabilityType(_BotCapabilityType, metaclass=_BotCapabilityTypeEnumTypeWrapper): ...
     UNKNOWN: BotCapabilityMetadata.BotCapabilityType.ValueType  # 0
@@ -985,6 +992,11 @@ class BotCapabilityMetadata(_message.Message):
     AI_STUDY_QUIZ_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 82
     HATCH_CVM_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 83
     RICH_RESPONSE_SOCIAL_ENTITY_PREFETCH_SCHEDULER_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 84
+    AI_MUSE_JARVIS_EXTENDED_CARDS_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 85
+    AI_INTERJECTIONS_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 86
+    AI_RICH_RESPONSE_READ_ALOUD_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 87
+    AI_RICH_RESPONSE_ITEM_LISTS_ENABLED: BotCapabilityMetadata.BotCapabilityType.ValueType  # 88
+    RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH: BotCapabilityMetadata.BotCapabilityType.ValueType  # 89
 
     CAPABILITIES_FIELD_NUMBER: _builtins.int
     @_builtins.property
